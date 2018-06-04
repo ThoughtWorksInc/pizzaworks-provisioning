@@ -1,0 +1,13 @@
+---
+- name: Install libselinux-python (for lineinfile)
+  yum:
+    name: libselinux-python
+    state: present
+- name: Set PORT environment variable
+  lineinfile:
+    path: /home/vagrant/.bashrc
+    line: 'export PORT="4567"'
+- name: Install Java 1.8 open jdk
+  yum:
+    name: java-1.8.0-openjdk
+    state: present
