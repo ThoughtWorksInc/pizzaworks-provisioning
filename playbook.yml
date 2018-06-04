@@ -6,3 +6,6 @@
     PORT: 4567
   roles:
     - java
+    - role: npm
+      become: yes
+      become_user: vagrant
