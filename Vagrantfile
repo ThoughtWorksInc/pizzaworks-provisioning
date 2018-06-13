@@ -20,6 +20,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :ansible do |ansible|
     ansible.playbook = "playbook.yml"
+    ansible.extra_vars = {
+        home_dir: "/home/vagrant",
+        user: "vagrant"
+    }
   end
 
   # Disable automatic box update checking. If you disable this, then

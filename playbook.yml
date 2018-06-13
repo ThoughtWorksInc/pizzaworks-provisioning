@@ -8,4 +8,4 @@
     - java
     - role: npm
       become: yes
-      become_user: vagrant
+      become_user: "{{ user }}"

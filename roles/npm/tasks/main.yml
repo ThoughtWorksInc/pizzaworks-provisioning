@@ -2,11 +2,11 @@
 - name: Download nvm script
   get_url:
     url: https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh
-    dest: /home/vagrant/nvm-install.sh
+    dest: "{{ home_dir }}/nvm-install.sh"
     mode: 500
 
 - name: Run nvm script
-  shell: /home/vagrant/nvm-install.sh
+  shell: "{{ home_dir }}/nvm-install.sh"
 
 - name: Install npm 5.1.0
   shell: . $NVM_DIR/nvm.sh && nvm install 5.1.0
