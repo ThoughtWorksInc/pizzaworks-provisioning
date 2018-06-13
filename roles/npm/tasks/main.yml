@@ -8,7 +8,11 @@
 - name: Run nvm script
   shell: "{{ home_dir }}/nvm-install.sh"
 
-- name: Install npm 5.1.0
-  shell: . $NVM_DIR/nvm.sh && nvm install 5.1.0
+- name: Install npm 8.11.2
+  shell: . $NVM_DIR/nvm.sh && nvm install 8.11.2
   args:
       executable: /bin/bash
+- name: Install “pg-migrator” node.js package.
+  npm:
+    name: pg-migrator
+    global: yes

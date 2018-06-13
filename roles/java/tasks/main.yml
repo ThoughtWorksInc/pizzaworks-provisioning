@@ -7,6 +7,10 @@
   lineinfile:
     path: "{{ home_dir }}/.bashrc"
     line: 'export PORT="4567"'
+- name: Accept ENV for ssh
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    line: 'AcceptEnv PGHOST PGPORT PGUSER PGDATABASE PGPW ENV'
 - name: Install Java 1.8 open jdk
   yum:
     name: java-1.8.0-openjdk
